@@ -9,7 +9,7 @@ public class PrintedBook extends Title{
         this.pages = pages;
     }
 
-    //Method to calculate the final amount of points the printed book achieved
+    //Method to calculate the final amount of points the printed book will achieve
     protected double calculatePoints(){
         return pages * calculateLiteraturePoints() * copies;
 
@@ -17,16 +17,24 @@ public class PrintedBook extends Title{
 
     //Setting the correct amount of point pr. page using .equals method because we work with objects (Strings) and not primitive variables (== won't work)
     protected double calculateLiteraturePoints() {
-        double result = 0;
-        if (literatureType.equals("BI") || literatureType.equals("TE")) {
-            result = 3;
-        } else if (literatureType.equals("LYRIK")) {
-            result = 6;
-        } else if (literatureType.equals("SKØN")) {
-            result = 1.7;
-        } else if (literatureType.equals("FAG")) {
-            result = 1;
-        } else System.out.println("Please enter a valid literature type");
+        double result;
+        switch (literatureType) {
+            case "BI":
+            case "TE":
+                result = 3;
+                break;
+            case "LYRIK":
+                result = 6;
+                break;
+            case "SKØN":
+                result = 1.7;
+                break;
+            case "FAG":
+                result = 1;
+                break;
+            default:
+                throw new IllegalArgumentException("Please enter a valid literature type: BI, TE, LYRIK, SKØN or FAG");
+        }
         return result;
     }
 }

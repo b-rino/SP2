@@ -6,7 +6,7 @@ public class LibraryRoyaltyCalculator {
         //Creating one instance of class AudioBook and two instances of class PrintedBook
         AudioBook book1 = new AudioBook("The Deadly Vow - Audio Edition", "SKØN", 1500, 244);
         PrintedBook book2 = new PrintedBook("Java 1.0", "FAG", 250, 320);
-        PrintedBook book3 = new PrintedBook("How to get your baby to sleep in 3 minutes", "BI", 9300, 8);
+        PrintedBook book3 = new PrintedBook("Barnyard Animals", "BI", 9300, 8);
 
         //Creating one instance of class Author
         Author author = new Author("Benjamin");
@@ -24,3 +24,8 @@ public class LibraryRoyaltyCalculator {
     }
 
 }
+
+//book1 10511
+//book2 5405kr
+//book3 15082
+//tilsammen 30999

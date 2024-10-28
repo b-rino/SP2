@@ -11,27 +11,32 @@ public class AudioBook extends Title{
         this.durationInMinutes = durationInMinutes;
 
     }
-    //Method to calculate the final amount of points the audio book achieved
+    //Method to calculate the final amount of points the audio book will achieve
     protected double calculatePoints(){
+
         return (durationInMinutes /2) * calculateLiteraturePoints() * copies;
     }
 
     //Setting the correct amount of point pr. minute using .equals method because we work with objects (Strings) and not primitive variables (== won't work)
     protected double calculateLiteraturePoints(){
-        double result = 0;
-        if (literatureType.equals("BI") || literatureType.equals("TE")) {
-            result = 1.5;
-        } else if (literatureType.equals("LYRIK")) {
-            result = 3;
-        } else if (literatureType.equals("SKØN")) {
-            result = 0.85;
-        } else if (literatureType.equals("FAG")) {
-            result = 0.5;
+        double result;
+        switch(literatureType) {
+            case "BI":
+            case "TE":
+                result = 1.5;
+                break;
+            case "LYRIK":
+                result = 3;
+                break;
+            case "SKØN":
+                result = 0.85;
+                break;
+            case "FAG":
+                result = 0.5;
+                break;
+            default:
+                throw new IllegalArgumentException("Please enter a valid literature type: BI, TE, LYRIK, SKØN or FAG");
         }
-        else{
-            System.out.println("Please enter a valid literature type");
-        }
-
         return result;
     }
 }
