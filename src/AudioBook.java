@@ -1,5 +1,3 @@
-import java.awt.print.Book;
-
 //using the extends keyword to specify that this is a sub-class to super-class Title
 public class AudioBook extends Title{
 
@@ -11,16 +9,19 @@ public class AudioBook extends Title{
         this.durationInMinutes = durationInMinutes;
 
     }
+
+    @Override
     //Method to calculate the final amount of points the audio book will achieve
     protected double calculatePoints(){
 
-        return (durationInMinutes /2) * calculateLiteraturePoints() * copies;
+        return (durationInMinutes * 0.5) * calculateLiteraturePoints() * copies;
     }
 
-    //Setting the correct amount of point pr. minute using .equals method because we work with objects (Strings) and not primitive variables (== won't work)
+    @Override
+    //Setting the correct amount of point pr. minute using a switch, which will also throw an exception if none of the valid literature types are present
     protected double calculateLiteraturePoints(){
         double result;
-        switch(literatureType) {
+        switch(getLiteratureType()) {
             case "BI":
             case "TE":
                 result = 1.5;

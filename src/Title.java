@@ -2,9 +2,9 @@
 
 public abstract class Title {
 
-
-    protected String title; //skulle være private
-    protected String literatureType; //skulle være private iflg. diagram
+    //Declaring the fields (and initializing "rate" because it's a permanent number
+    private String title;
+    private String literatureType;
     protected int copies;
     protected double rate = 0.067574;
 
@@ -20,10 +20,16 @@ public abstract class Title {
         return calculatePoints() * rate;
     }
 
-    //Abstract methods which means we demand our sub-classes to make a method with the same signature (but with different method bodies)
+    //Abstract methods which means we demand our sub-classes to make a method with the same signature
 
     protected abstract double calculatePoints();
 
     protected abstract double calculateLiteraturePoints();
+
+
+    //Making a getter for the private instance variable to gain access to its value which is used in the sub-classes
+    public String getLiteratureType() {
+        return literatureType;
+    }
 
 }

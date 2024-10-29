@@ -1,23 +1,22 @@
-import java.util.ArrayList;
-
 public class LibraryRoyaltyCalculator {
     public static void main(String[] args) {
 
-        //Creating one instance of class AudioBook and two instances of class PrintedBook
+        //Initializing an instance of class Author
+        Author author = new Author("Benjamin");
+
+        //Initializing an instance of class AudioBook and two instances of class PrintedBook
         AudioBook book1 = new AudioBook("The Deadly Vow - Audio Edition", "SKØN", 1500, 244);
         PrintedBook book2 = new PrintedBook("Java 1.0", "FAG", 250, 320);
         PrintedBook book3 = new PrintedBook("Barnyard Animals", "BI", 9300, 8);
 
-        //Creating one instance of class Author
-        Author author = new Author("Benjamin");
 
-        //Adding the three books to the instance variable ArrayList in class Author. Both types of books are sub-classes to Title, which is why they will fit in the Title ArrayList
+        //Adding the three books to the ArrayList which holds "Title" objects that we have in class Author. Both AudioBook and PrintedBook fit in the ArrayList because they are sub-classes to Title
         author.addTitle(book1);
         author.addTitle(book2);
         author.addTitle(book3);
 
-        //calling method from class Author, which prints out name and total earnings
-        author.printInfo();
+        //Printing out the modified toString method
+        System.out.println(author);
 
 
 
@@ -25,7 +24,4 @@ public class LibraryRoyaltyCalculator {
 
 }
 
-//book1 10511
-//book2 5405kr
-//book3 15082
-//tilsammen 30999
+//2 decimals

@@ -9,16 +9,18 @@ public class PrintedBook extends Title{
         this.pages = pages;
     }
 
+    @Override
     //Method to calculate the final amount of points the printed book will achieve
     protected double calculatePoints(){
         return pages * calculateLiteraturePoints() * copies;
 
     }
 
-    //Setting the correct amount of point pr. page using .equals method because we work with objects (Strings) and not primitive variables (== won't work)
+    @Override
+    //Setting the correct amount of point pr. page using a switch, which will also throw an exception if none of the valid literature types are present
     protected double calculateLiteraturePoints() {
         double result;
-        switch (literatureType) {
+        switch (getLiteratureType()) {
             case "BI":
             case "TE":
                 result = 3;
