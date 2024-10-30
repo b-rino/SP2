@@ -10,7 +10,7 @@ public class LibraryRoyaltyCalculator {
         PrintedBook book3 = new PrintedBook("Barnyard Animals", "BI", 9300, 8);
 
 
-        //Adding the three books to the ArrayList which holds "Title" objects that we have in class Author. Both AudioBook and PrintedBook fit in the ArrayList because they are sub-classes to Title
+        //Adding the three books to the ArrayList we have in class Author, which holds "Title" objects. Both AudioBook and PrintedBook fit in the ArrayList because they are sub-classes to Title
         author.addTitle(book1);
         author.addTitle(book2);
         author.addTitle(book3);
@@ -23,5 +23,3 @@ public class LibraryRoyaltyCalculator {
     }
 
 }
-
-//2 decimals

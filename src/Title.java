@@ -2,7 +2,7 @@
 
 public abstract class Title {
 
-    //Declaring the fields (and initializing "rate" because it's a permanent number
+    //Declaring the fields (and initializing "rate" because it's a permanent number)
     private String title;
     private String literatureType;
     protected int copies;

@@ -18,7 +18,7 @@ public class AudioBook extends Title{
     }
 
     @Override
-    //Setting the correct amount of point pr. minute using a switch, which will also throw an exception if none of the valid literature types are present
+    //Setting the amount of points pr. minute using a switch, which will also throw an exception if none of the valid literature types are present
     protected double calculateLiteraturePoints(){
         double result;
         switch(getLiteratureType()) {

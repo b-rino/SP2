@@ -1,4 +1,5 @@
-
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 
 public class Author {
@@ -16,12 +17,15 @@ public class Author {
     }
 
     //Looping through the ArrayList "titles" (which consists of objects of type Title) calling the calculateRoyalty method in each iteration to get the final sum (total)
+    //Usage of BigDecimal and RoundingMode is to ensure we only have two decimals in the number. Usually I would preferDecimalFormat, but I couldn't make it work this time
     public float calculateTotalPay(){
-        float total = 0;
+        double total = 0;
         for (Title title : titles) {
             total += title.calculateRoyalty();
         }
-        return total;
+        BigDecimal bd = new BigDecimal(total);
+        bd = bd.setScale(2, RoundingMode.HALF_UP);
+        return bd.floatValue();
     }
 
 
@@ -32,7 +36,7 @@ public class Author {
             else this.name = name;
     }
 
-    //modifying the toString method to get a simple print when called
+    //Modifying the toString method to get a simple print when called
     @Override
     public String toString() {
         return name + ": " + calculateTotalPay();
