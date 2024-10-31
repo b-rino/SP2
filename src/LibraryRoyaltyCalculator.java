@@ -2,7 +2,7 @@ public class LibraryRoyaltyCalculator {
     public static void main(String[] args) {
 
         //Initializing an instance of class Author
-        Author author = new Author("Benjamin");
+        Author author = new Author("Olivia R.");
 
         //Initializing an instance of class AudioBook and two instances of class PrintedBook
         AudioBook book1 = new AudioBook("The Deadly Vow - Audio Edition", "SKØN", 1500, 244);

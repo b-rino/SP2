@@ -31,9 +31,11 @@ public class Author {
 
     //Making conditions for setting name and making it throwing an exception if the conditions aren't met
     public void setName(String name) {
-            if(name.isEmpty())
+            if(name.isEmpty()) {
                 throw new IllegalArgumentException("Name cannot be empty");
-            else this.name = name;
+            }else{
+                this.name = name;
+            }
     }
 
     public String getName() {

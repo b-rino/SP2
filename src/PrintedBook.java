@@ -3,7 +3,7 @@ public class PrintedBook extends Title{
 
     private int pages;
 
-    //Constructor which shares three parameters with it's super-class (Title)
+    //Constructor which shares three parameters with the super-class
     public PrintedBook(String title, String literatureType, int copies, int pages){
         super(title, literatureType, copies);
         setPages(pages);
@@ -42,10 +42,11 @@ public class PrintedBook extends Title{
 
     //Setter and getter for private instance variable
     public void setPages(int pages){
-        if(pages < 0)
+        if(pages < 0) {
             throw new IllegalArgumentException("Amount of pages cannot be negative");
-        else
-        this.pages = pages;
+        }else{
+         this.pages = pages;
+        }
     }
 
     public int getPages(){

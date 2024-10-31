@@ -3,7 +3,7 @@ public class AudioBook extends Title{
 
     private int durationInMinutes;
 
-    //Constructor which shares three parameters with it's super-class (Title)
+    //Constructor which shares three parameters with the super-class
     public AudioBook(String title, String literatureType, int copies, int durationInMinutes) {
         super(title, literatureType, copies);
         setDurationInMinutes(durationInMinutes);
@@ -43,10 +43,11 @@ public class AudioBook extends Title{
 
     //Setter and getter for private instance variable
     public void setDurationInMinutes(int durationInMinutes) {
-        if(durationInMinutes < 0)
+        if(durationInMinutes < 0) {
             throw new IllegalArgumentException("Duration must be a positive integer");
-        else
-        this.durationInMinutes = durationInMinutes;
+        }else {
+            this.durationInMinutes = durationInMinutes;
+        }
     }
 
     public int getDurationInMinutes() {

@@ -16,7 +16,7 @@ public abstract class Title {
         setCopies(copies);
     }
 
-    //This calculation uses the permanent number "rate" and the calculatePoints (calculated in different ways) from the subclasses
+    //This calculation uses the permanent number from variable "rate" and the calculatePoints (calculated in different ways) from the subclasses
     public double calculateRoyalty(){
 
         return calculatePoints() * rate;
@@ -31,26 +31,29 @@ public abstract class Title {
 
     //Setters for the instance variables with appropriate conditions. Exception will be thrown if conditions aren't met.
     public void setLiteratureType(String literatureType) {
-        if(literatureType.isEmpty())
+        if(literatureType.isEmpty()) {
             throw new IllegalArgumentException("Literature type cannot be empty");
-        else
-        this.literatureType = literatureType;
+        }else {
+            this.literatureType = literatureType;
+        }
     }
 
 
     public void setTitle(String title) {
-        if(title.isEmpty())
+        if(title.isEmpty()) {
             throw new IllegalArgumentException("Title cannot be empty");
-        else
-        this.title = title;
+        }else {
+            this.title = title;
+        }
     }
 
 
     public void setCopies(int copies) {
-        if(copies < 0)
+        if(copies < 0) {
             throw new IllegalArgumentException("Copies cannot be negative");
-        else
+        }else {
             this.copies = copies;
+        }
     }
 
 
