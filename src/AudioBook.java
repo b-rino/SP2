@@ -1,12 +1,12 @@
-//using the extends keyword to specify that this is a sub-class to super-class Title
+//Using the "extends" keyword to specify that this is a sub-class to super-class Title
 public class AudioBook extends Title{
 
     private int durationInMinutes;
 
-    //Constructor which shares three parameters with it's super-class (Title), which is why we can call super()
+    //Constructor which shares three parameters with it's super-class (Title)
     public AudioBook(String title, String literatureType, int copies, int durationInMinutes) {
         super(title, literatureType, copies);
-        this.durationInMinutes = durationInMinutes;
+        setDurationInMinutes(durationInMinutes);
 
     }
 
@@ -39,5 +39,17 @@ public class AudioBook extends Title{
                 throw new IllegalArgumentException("Please enter a valid literature type: BI, TE, LYRIK, SKØN or FAG");
         }
         return result;
+    }
+
+    //Setter and getter for private instance variable
+    public void setDurationInMinutes(int durationInMinutes) {
+        if(durationInMinutes < 0)
+            throw new IllegalArgumentException("Duration must be a positive integer");
+        else
+        this.durationInMinutes = durationInMinutes;
+    }
+
+    public int getDurationInMinutes() {
+        return durationInMinutes;
     }
 }

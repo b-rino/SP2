@@ -1,12 +1,12 @@
-//using the extends keyword to specify that this is a sub-class to super-class Title
+//using the "extends" keyword to specify that this is a sub-class to super-class Title
 public class PrintedBook extends Title{
 
     private int pages;
 
-    //Constructor which shares three parameters with it's super-class (Title), which is why we can call super()
+    //Constructor which shares three parameters with it's super-class (Title)
     public PrintedBook(String title, String literatureType, int copies, int pages){
         super(title, literatureType, copies);
-        this.pages = pages;
+        setPages(pages);
     }
 
     @Override
@@ -38,5 +38,17 @@ public class PrintedBook extends Title{
                 throw new IllegalArgumentException("Please enter a valid literature type: BI, TE, LYRIK, SKØN or FAG");
         }
         return result;
+    }
+
+    //Setter and getter for private instance variable
+    public void setPages(int pages){
+        if(pages < 0)
+            throw new IllegalArgumentException("Amount of pages cannot be negative");
+        else
+        this.pages = pages;
+    }
+
+    public int getPages(){
+        return pages;
     }
 }

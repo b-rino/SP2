@@ -6,8 +6,8 @@ public class Author {
     private String name;
     private ArrayList<Title> titles = new ArrayList<>();
 
+    //Using setter method to incorporate conditions in constructor
     public Author(String name) {
-        //calling setName method to also have the same conditions when constructor is called
         setName(name);
     }
 
@@ -17,7 +17,7 @@ public class Author {
     }
 
     //Looping through the ArrayList "titles" (which consists of objects of type Title) calling the calculateRoyalty method in each iteration to get the final sum (total)
-    //Usage of BigDecimal and RoundingMode is to ensure we only have two decimals in the number. Usually I would preferDecimalFormat, but I couldn't make it work this time
+    //Usage of BigDecimal and RoundingMode is to ensure we only get two decimals in the result. Usually I would prefer DecimalFormat, but I couldn't make it work this time
     public float calculateTotalPay(){
         double total = 0;
         for (Title title : titles) {
@@ -34,6 +34,10 @@ public class Author {
             if(name.isEmpty())
                 throw new IllegalArgumentException("Name cannot be empty");
             else this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 
     //Modifying the toString method to get a simple print when called

@@ -19,7 +19,6 @@ public class LibraryRoyaltyCalculator {
         System.out.println(author);
 
 
-
     }
 
 }
