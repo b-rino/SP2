@@ -33,6 +33,7 @@ public abstract class Title {
     public void setLiteratureType(String literatureType) {
         if(literatureType.isEmpty())
             throw new IllegalArgumentException("Literature type cannot be empty");
+        else
         this.literatureType = literatureType;
     }
 

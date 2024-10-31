@@ -1,4 +1,4 @@
-//using the "extends" keyword to specify that this is a sub-class to super-class Title
+//Using the "extends" keyword to specify that this is a sub-class to super-class Title
 public class PrintedBook extends Title{
 
     private int pages;

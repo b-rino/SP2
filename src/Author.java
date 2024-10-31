@@ -16,7 +16,7 @@ public class Author {
         titles.add(title);
     }
 
-    //Looping through the ArrayList "titles" (which consists of objects of type Title) calling the calculateRoyalty method in each iteration to get the final sum (total)
+    //Looping through the ArrayList "titles" (which consists of objects of type Title) calling the calculateRoyalty method in each iteration to get the final sum ("total")
     //Usage of BigDecimal and RoundingMode is to ensure we only get two decimals in the result. Usually I would prefer DecimalFormat, but I couldn't make it work this time
     public float calculateTotalPay(){
         double total = 0;
